@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROWN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/aa item.webp" alt="Logo">
+            </div>
+            <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="profil.html">Profile</a></li>
+                    <li><a href="media.html">Social Media</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="content">
+        <!-- Community Section -->
+        <h2>Community</h2>
+        <div class="community-container">
+            <!-- Instagram Card -->
+            <div class="community-card">
+                <img src="../assets/instagram.png" alt="Instagram Logo">
+                <h3>Instagram</h3>
+                <button class="community-btn" onclick="window.location.href='https://www.instagram.com/diton.king'">Go</button>
+            </div>
+
+            <!-- YouTube Card -->
+            <div class="community-card">
+                <img src="../assets/youtube.png" alt="YouTube Logo">
+                <h3>YouTube</h3>
+                <button class="community-btn" onclick="window.location.href='https://www.youtube.com/channel/UCKlrdRYNyD668EuMEo-HR2w'">Go</button>
+            </div>
+
+            <!-- Facebook Card -->
+            <div class="community-card">
+                <img src="../assets/facebook.png" alt="Facebook Logo">
+                <h3>Facebook</h3>
+                <button class="community-btn" onclick="window.location.href='https://www.facebook.com/?locale=id_ID'">Go</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>@Ekycand_</p>
+    </footer>
+
+    <script>
+        var prevScrollPos = window.pageYOffset;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                document.querySelector('header').style.top = '0';
+            } else {
+                document.querySelector('header').style.top = '-80px'; // Adjust the height of your header
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+        function toggleNav() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Hide navigation when a link is clicked (for mobile)
+        var navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                var navLinks = document.querySelector('.nav-links');
+                navLinks.classList.remove('show');
+            });
+        });
+
+        function pesanProduct(productName) {
+            var nomorWhatsApp = "+628123456789"; // Ganti dengan nomor WhatsApp yang sesuai
+            var pesan = "Halo, saya tertarik dengan produk " + productName;
+
+            // Buka link WhatsApp dengan nomor dan pesan yang telah ditentukan
+            window.open('https://wa.me/' + nomorWhatsApp + '?text=' + encodeURIComponent(pesan), '_blank');
+        }
+
+        // Fungsi untuk menampilkan popup detail
+        function showDetail(title, description, price) {
+            document.getElementById('detailTitle').innerHTML = title;
+            document.getElementById('detailDescription').innerHTML = description;
+            document.getElementById('detailPrice').innerHTML = price;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        // Fungsi untuk menutup popup detail
+        function closeDetail() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

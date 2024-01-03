@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROWN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/aa item.webp" alt="Logo">
+            </div>
+            <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="profil.html">Profile</a></li>
+                    <li><a href="media.html">Social Media</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <section id="content">
+        <h1>DITON KING</h1>
+        <h3>Take advantage of your free time with fun things.</h3>
+    
+        <div class="video-container">
+            <video controls autoplay loop muted>
+                <source src="../assets/cet.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+     <p></p>   
+    </section>
+    <footer>
+        <p>@Ekycand_</p>
+    </footer>
+
+    <script>
+        var prevScrollPos = window.pageYOffset;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                document.querySelector('header').style.top = '0';
+            } else {
+                document.querySelector('header').style.top = '-80px'; // Adjust the height of your header
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+        function toggleNav() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Hide navigation when a link is clicked (for mobile)
+        var navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                var navLinks = document.querySelector('.nav-links');
+                navLinks.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>

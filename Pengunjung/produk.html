@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROWN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/aa item.webp" alt="Logo">
+            </div>
+            <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="profil.html">Profile</a></li>
+                    <li><a href="media.html">Social Media</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="content">
+        <h2>Daftar Produk</h2>
+        <div class="product-card">
+            <div class="card">
+                <img src="../foto/DITON KING PUSAKA 150ML.png" alt="Product 1">
+                <h3>DITON KING PUSAKA 150ML</h3>
+                <p>Ukuran kecil tersedia dalam berbagai warna</p>
+                <p class="price">Rp.23.000,00</p>
+                <button class="detail-btn" onclick="showDetail('DITON KING PUSAKA 150ML', 'Pusaka 150ml adalah produk kecil yang tidak bisa Anda remehkan, pegangan yang nyaman, dan kombinasi tekanan rendah yang berguna untuk kebutuhan detail Anda. Cat semprot Diton King dibuat dengan formula terbaik dan Pigmen Kelas Satu, Tekanan yang stabil memungkinkan pengguna memiliki pengendalian dan penanganan yang sempurna. Selalu kocok dengan baik untuk hasil maksimal.', 'Rp.23.000,00')">Detail</button>
+            </div>
+            <div class="card">
+                <img src="../foto/THE NEW DITON KING 300ML.png" alt="Product 2">
+                <h3>THE NEW DITON KING 300ML</h3>
+                <p>Ukuran sedang tersedia dalam berbagai warna</p>
+                <p class="price">Rp.30.000,00</p>
+                <button class="detail-btn" onclick="showDetail('THE NEW DITON KING 300ML', 'Varian 300ml akan berguna untuk rasa cengkeraman ekstra dan tidak memakan terlalu banyak ruang di tas Anda. Cat semprot Diton King dibuat dengan formula terbaik dan Pigmen Kelas Satu, Cat semprot Diton King dibuat dengan formula terbaik dan Pigmen Kelas Satu. Selalu kocok dengan baik untuk hasil maksimal.', 'Rp.30.000,00')">Detail</button>
+            </div>
+            <div class="card">
+                <img src="../foto/THE NEW DITON KING 400ML.png" alt="Product 3">
+                <h3>THE NEW DITON KING 400ML</h3>
+                <p>Ukuran besar tersedia dalam berbagai warna</p>
+                <p class="price">Rp.40.000,00</p>
+                <button class="detail-btn" onclick="showDetail('THE NEW DITON KING 400ML', 'Varian 400ml memberikan cat yang lebih tahan lama dalam satu kaleng sehingga menghemat waktu untuk mendapatkan rangkaian warna lainnya. dengan waktu pengeringan yang cepat, peralihan dengan warna lain menjadi cepat dan berani dengan bantuan tingkat cakupan yang sangat baik. Selalu kocok dengan baik untuk hasil maksimal. Selalu kocok dengan baik untuk hasil maksimal.', 'Rp.40.000,00')">Detail</button>
+            </div>
+            <div class="card">
+                <img src="../foto/DITON KING GARUDA 750ML.png" alt="Product 4">
+                <h3>DITON KING GARUDA 750ML</h3>
+                <p>Ukuran super tersedia dalam berbagai warna</p>
+                <p class="price">Rp.80.000,00</p>
+                <button class="detail-btn" onclick="showDetail('DITON KING GARUDA 750ML', 'Memperkenalkan yang pertama di Asia Tenggara, Spesialis Super Masif dan Keras 750 ml! Garuda akan memberi Anda jangkauan luas dan jangkauan penyemprotan tingkat tinggi untuk kebutuhan grafiti Anda. bahan terbaik dengan cat semprot berkualitas alat yang sempurna untuk kebutuhan seni Anda, Selalu kocok dengan baik untuk hasil maksimal.', 'Rp.80.000,00')">Detail</button>
+            </div>
+            <div class="card">
+                <img src="../foto/CANS DUFFLE BAG.png" alt="Product 5">
+                <h3>CANS DUFFLE BAG</h3>
+                <p>Buat bawa barang</p>
+                <p class="price">Rp.350.000,00</p>
+                <button class="detail-btn" onclick="showDetail('CANS DUFFLE BAG', 'Tas yang di rancang khusus untuk menyimpan dan membawa barang bawaan termasuk cat semprot diton king dan memiliki kapasitas yang cukup besar. sehingga lebih memudahkan anda dalam membawa barang bawaan. dan memang di desain untuk memudahkan anda dalam kebutuhan seni apapun, dibuat dengan bahan terbaik dan berkualitas.', 'Rp.350.000,00')">Detail</button>
+            </div>
+            <div class="card">
+                <img src="../foto/MASK FOR SPRAY PAINTING.png" alt="Product 6">
+                <h3>MASK FOR SPRAY PAINTING</h3>
+                <p>Buat filter udara ke paru-paru</p>
+                <p class="price">Rp.65.000,00</p>
+                <button class="detail-btn" onclick="showDetail('MASK FOR SPRAY PAINTING', 'Masker dapat membantu melindungi pernapasan dari inhalasi partikel-partikel dan perlindungan udara yang kita hirup dari pelarut dan zat kimia yang ada di dalam cat semprot yang dapat merugikan kesehatan jika terhirup.', 'Rp.65.000,00')">Detail</button>
+            </div>
+            <!-- Repeat the above structure for additional products -->
+        </div>
+    </section>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span onclick="closeDetail()" style="cursor: pointer; float: right; font-size: 20px; margin-bottom: 10px;">&times;</span>
+            <h3 id="detailTitle">Product Title</h3>
+            <p id="detailDescription">Product Description</p>
+            <p class="price" id="detailPrice">Product Price</p>
+            <button class="pesan-btn" onclick="pesanProduct('Product Title')">Pesan</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>@Ekycand_</p>
+    </footer>
+
+    <script>
+        var prevScrollPos = window.pageYOffset;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                document.querySelector('header').style.top = '0';
+            } else {
+                document.querySelector('header').style.top = '-80px'; // Adjust the height of your header
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+        function toggleNav() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Hide navigation when a link is clicked (for mobile)
+        var navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                var navLinks = document.querySelector('.nav-links');
+                navLinks.classList.remove('show');
+            });
+        });
+
+        function pesanProduct(productName) {
+        var nomorWhatsApp = "+6281911053992"; // Ganti dengan nomor WhatsApp yang sesuai
+        var pesan = "Halo, saya tertarik dengan produk anda";
+
+        // Buka link WhatsApp dengan nomor dan pesan yang telah ditentukan
+        window.open('https://wa.me/' + nomorWhatsApp + '?text=' + encodeURIComponent(pesan), '_blank');
+    }
+
+      // Fungsi untuk menampilkan popup detail
+      function showDetail(title, description, price) {
+            document.getElementById('detailTitle').innerHTML = title;
+            document.getElementById('detailDescription').innerHTML = description;
+            document.getElementById('detailPrice').innerHTML = price;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        // Fungsi untuk menutup popup detail
+        function closeDetail() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
